@@ -1,0 +1,21 @@
+study_name: Number Guessing with Machine Learning
+engine: optuna
+trials: 50
+source_templates:
+  - ./guess.sh
+rendered_templates_path: ./rendered
+score_path: ./result
+storage: sqlite:///tmp.sqlite3
+load_if_exists: true
+direction: minimize
+experiment:
+  type: script
+  args: ./rendered/guess.sh
+observer:
+  enabled: true
+adjustments:
+  - name: guess_number
+    type: int
+    config:
+      low: 1
+      high: 40
