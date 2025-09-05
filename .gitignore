@@ -219,3 +219,5 @@ rendered
 test-templates
 example/**/result
 example/**/results
+example/**/*.db
+example/**/*.sqlite3
