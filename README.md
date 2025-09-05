@@ -30,7 +30,11 @@ Stexus takes the stance on anything that can be parameterized, can be optimized,
 
 ## Installation
 
-TODO
+You can install Stexus via `pip` (we are on [PyPI](https://pypi.org/p/stexus)!)
+
+```sh
+python3 -m pip install stexus
+```
 
 ## Quick Start
 
