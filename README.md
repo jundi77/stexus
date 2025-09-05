@@ -2,7 +2,7 @@
 
 *Study, Experiment, adjUst, Study*
 
-A flexible optimization framework that connects (hyper)parameter optimization engines with custom experiments through template-based configuration and a task, e.g. scripting.
+A flexible optimization tool that connects (hyper)parameter optimization engines with custom experiments through template-based configuration and a task, e.g. scripting.
 
 Stexus enables you to optimize any parameterized process by:
 
