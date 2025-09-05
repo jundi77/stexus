@@ -5,7 +5,8 @@
 Automated best parameter finder.
 
 Supported engine:
-    - Optuna ([site](https://optuna.org/))
+
+- Optuna ([site](https://optuna.org/))
 
 ## Running Stexus
 
