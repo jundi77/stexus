@@ -8,9 +8,20 @@ Supported engine:
 
 - Optuna ([site](https://optuna.org/))
 
-## Running Stexus
+# Installing Stexus
 
 TODO
+
+## Running Stexus
+
+You can run Stexus with, but not limited to:
+
+```sh
+python3 -m stexus -c (config file path)
+
+# if only want to run observer
+python3 -m stexus -c (config file path) --observe-only
+```
 
 ## Configuration
 
