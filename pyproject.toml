@@ -24,7 +24,8 @@ dynamic = [
 attr = "stexus.__version__" # i hate that i can't do newline like dict
 
 [tool.setuptools.dynamic.readme]
-file = ["README.md"]
+file = "README.md"
+content-type = "text/markdown"
 
 [tool.setuptools.dynamic.dependencies]
 file = ["requirements.txt"]
