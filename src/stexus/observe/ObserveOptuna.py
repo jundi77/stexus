@@ -1,7 +1,9 @@
 from optuna.storages import RDBStorage
 from packaging import version
 import optuna_dashboard._cli
-# from optuna_dashboard._cli import auto_select_server, run_debug_server, run_gunicorn, run_wsgiref, BaseStorage, get_storage
+import time
+import os
+# from optuna_dashboard._cli import auto_select_serer, run_debug_server, run_gunicorn, run_wsgiref, BaseStorage, get_storage
 from .BaseObserve import BaseObserve
 from .ObserveException import ObserveException
 from ..config.Config import ConfigModel
@@ -17,12 +19,22 @@ class ObserveOptuna(BaseObserve):
         if not ignore_config_enabled and not self._config.get('observer', {}).get('enabled', False):
             print("observer is disabled")
             return
+        
+        storage: optuna_dashboard._cli.BaseStorage|None = None
+        max_retry = 10
+        while retry := 0 < max_retry and storage is None:
+            try:
+                storage = optuna_dashboard._cli.get_storage(
+                    self._config["storage"],
+                    # storage_class=args.storage_class # default node
+                )
+            except:
+                time.sleep(3)
+                print(f"observer: failed to get storage {self._config['storage']}, retried {retry}/{max_retry}.")
+                retry = retry + 1
 
-        storage: optuna_dashboard._cli.BaseStorage
-        storage = optuna_dashboard._cli.get_storage(
-            self._config["storage"],
-            # storage_class=args.storage_class # default node
-        )
+        if storage is None:
+            raise ObserveException(f"observer: failed to get storage {self._config['storage']}, retried {max_retry}.")
 
         artifact_dir = self._config.get('observer', {}).get('artifact_dir')
         artifact_store: optuna_dashboard._cli.ArtifactStore | None
