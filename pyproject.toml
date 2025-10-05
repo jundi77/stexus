@@ -5,6 +5,13 @@ build-backend = "setuptools.build_meta"
 ########################################
 [project]
 name = "stexus"
+description = "A flexible optimization tool that connects (hyper)parameter optimization engines with custom experiments through template-based configuration and a task, e.g. scripting."
+authors = [
+  { name = "jundi77", email = "jundihanif77@gmail.com" }
+]
+maintainers = [
+  { name = "jundi77", email = "jundihanif77@gmail.com" }
+]
 license = "Apache-2.0"
 license-files = [
     "LICENSE*"
@@ -15,6 +22,9 @@ dynamic = [
     "dependencies" ,
     "optional-dependencies"
 ]
+[project.urls]
+"Homepage" = "https://github.com/jundi77/stexus"
+"Repository" = "https://github.com/jundi77/stexus"
 ########################################
 ########################################
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata
