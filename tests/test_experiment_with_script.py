@@ -1,8 +1,8 @@
 import platform
 import os, stat
 import pathlib
-from stexus.adjust.AdjustInterface import AdjustInterface
-from stexus.experiment.ExperimentWithScript import ExperimentWithScript
+from stexus.adjust.interface import AdjustInterface
+from stexus.experiment.script import ExperimentWithScript
 from optuna import Trial
 
 class MockAdjust(AdjustInterface):

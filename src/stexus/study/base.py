@@ -1,8 +1,8 @@
 from abc import abstractmethod
-from .StudyInterface import StudyInterface
-from .StudyException import StudyException
-from ..config.Config import ConfigModel
-from ..experiment.ExperimentInterface import ExperimentInterface
+from .interface import StudyInterface
+from .exception import StudyException
+from ..config.loader import ConfigModel
+from ..experiment.interface import ExperimentInterface
 
 class BaseStudy(StudyInterface):
     def __init__(self,

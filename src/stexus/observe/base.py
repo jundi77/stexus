@@ -1,7 +1,7 @@
 from abc import abstractmethod
-from .ObserveInterface import ObserveInterface
-from .ObserveException import ObserveException
-from ..config.Config import ConfigModel
+from .interface import ObserveInterface
+from .exception import ObserveException
+from ..config.loader import ConfigModel
 
 class BaseObserve(ObserveInterface):
     def __init__(self,

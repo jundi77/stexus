@@ -1,6 +1,6 @@
 import pathlib, pytest
-from stexus.config.Config import Config
-from stexus.config.ConfigException import ConfigException
+from stexus.config.loader import Config
+from stexus.config.exception import ConfigException
 
 """TODO
 more config test case should come after the config schema is done

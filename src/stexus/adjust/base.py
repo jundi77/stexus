@@ -4,9 +4,9 @@ from pathlib import Path
 from typing import TypedDict
 from abc import abstractmethod
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from .AdjustInterface import AdjustInterface
-from .AdjustException import AdjustException
-from ..config.Config import ConfigModel
+from .interface import AdjustInterface
+from .exception import AdjustException
+from ..config.loader import ConfigModel
 
 class JinjaPathEnvironments(TypedDict):
     rendered_path: str

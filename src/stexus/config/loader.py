@@ -4,7 +4,7 @@ from typing import TypedDict
 from cerberus.validator import Validator, BareValidator
 from optuna_dashboard._cli import SERVER_CHOICES as OPTUNA_SERVER_CHOICES
 from typing import Literal, Union, Optional, Sequence, Final
-from .ConfigException import ConfigException
+from .exception import ConfigException
 
 # more flexible than the actual used stored config
 # this is more like for parsing validation

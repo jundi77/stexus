@@ -1,9 +1,9 @@
 import subprocess
 from optuna import Trial
-from .BaseExperiment import BaseExperiment
-from .ExperimentException import ExperimentException
-from ..config.Config import ConfigModel
-from ..adjust.AdjustInterface import AdjustInterface
+from .base import BaseExperiment
+from .exception import ExperimentException
+from ..config.loader import ConfigModel
+from ..adjust.interface import AdjustInterface
 
 class ExperimentWithScript(BaseExperiment):
     def __init__(self,

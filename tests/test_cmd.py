@@ -1,14 +1,14 @@
 import pytest
 import argparse
 from stexus import cmd
-from stexus.config.Config import Config
-from stexus.experiment.ExperimentWithScript import ExperimentWithScript
-from stexus.adjust.AdjustInterface import AdjustInterface
-from stexus.study.StudyOptuna import StudyOptuna
-from stexus.adjust.BaseAdjust import BaseAdjust
-from stexus.observe.ObserveOptuna import ObserveOptuna
-from stexus.observe.ObserveInterface import ObserveInterface
-from stexus.study.StudyInterface import StudyInterface
+from stexus.config.loader import Config
+from stexus.experiment.script import ExperimentWithScript
+from stexus.adjust.interface import AdjustInterface
+from stexus.study.optuna import StudyOptuna
+from stexus.adjust.base import BaseAdjust
+from stexus.observe.optuna import ObserveOptuna
+from stexus.observe.interface import ObserveInterface
+from stexus.study.interface import StudyInterface
 
 class MockAdjustInterface(AdjustInterface):
     def adjust(self, advocator) -> None:

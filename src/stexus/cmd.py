@@ -2,15 +2,15 @@ import argparse
 import multiprocessing as mp
 import pprint
 
-from .adjust.AdjustOptuna import AdjustOptuna
-from .adjust.AdjustInterface import AdjustInterface
-from .config.Config import Config, ConfigModel
-from .experiment.ExperimentWithScript import ExperimentWithScript
-from .experiment.ExperimentInterface import ExperimentInterface
-from .study.StudyOptuna import StudyOptuna
-from .study.StudyInterface import StudyInterface
-from .observe.ObserveOptuna import ObserveOptuna
-from .observe.ObserveInterface import ObserveInterface
+from .adjust.optuna import AdjustOptuna
+from .adjust.interface import AdjustInterface
+from .config.loader import Config, ConfigModel
+from .experiment.script import ExperimentWithScript
+from .experiment.interface import ExperimentInterface
+from .study.optuna import StudyOptuna
+from .study.interface import StudyInterface
+from .observe.optuna import ObserveOptuna
+from .observe.interface import ObserveInterface
 
 def _get_experiment(config: ConfigModel, adjust: AdjustInterface) -> ExperimentInterface:
     if config['experiment']['type'] == 'script':

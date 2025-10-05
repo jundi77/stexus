@@ -3,9 +3,9 @@ from optuna import Trial
 from pathlib import Path
 from typing import TypedDict, no_type_check
 from jinja2 import Environment, Template, FileSystemLoader, select_autoescape
-from .BaseAdjust import BaseAdjust
-from .AdjustException import AdjustException
-from ..config.Config import ConfigModel
+from .base import BaseAdjust
+from .exception import AdjustException
+from ..config.loader import ConfigModel
 
 class AdjustOptuna(BaseAdjust):
     def __init__(self, config: ConfigModel|None = None) -> None:
