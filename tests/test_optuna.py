@@ -1,9 +1,9 @@
 import pathlib
 import pytest
-from stexus.adjust.AdjustOptuna import AdjustOptuna
-from stexus.study.StudyOptuna import StudyOptuna
+from stexus.adjust.optuna import AdjustOptuna
+from stexus.study.optuna import StudyOptuna
 from optuna import Trial
-from stexus.experiment.ExperimentInterface import ExperimentInterface
+from stexus.experiment.interface import ExperimentInterface
 
 class MockExperiment(ExperimentInterface):
     def __init__(self, adjust: AdjustOptuna) -> None:

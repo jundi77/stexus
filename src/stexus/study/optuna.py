@@ -1,7 +1,7 @@
 import optuna
-from .BaseStudy import BaseStudy
-from ..experiment.ExperimentInterface import ExperimentInterface
-from ..config.Config import ConfigModel
+from .base import BaseStudy
+from ..experiment.interface import ExperimentInterface
+from ..config.loader import ConfigModel
 
 class StudyOptuna(BaseStudy):
     def __init__(self,

@@ -1,7 +1,7 @@
 from optuna import Trial
 import pytest
-from stexus.study.BaseStudy import BaseStudy
-from stexus.study.StudyException import StudyException
+from stexus.study.base import BaseStudy
+from stexus.study.exception import StudyException
 
 class NoopStudy(BaseStudy):
     def study(self):

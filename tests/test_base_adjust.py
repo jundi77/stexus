@@ -2,8 +2,8 @@ import pytest
 import jinja2
 import pathlib
 from optuna import Trial
-from stexus.adjust.BaseAdjust import BaseAdjust
-from stexus.adjust.AdjustException import AdjustException
+from stexus.adjust.base import BaseAdjust
+from stexus.adjust.exception import AdjustException
 
 class MockRealizedBaseAdjust(BaseAdjust):
     def adjust(self, advocator: Trial) -> None:

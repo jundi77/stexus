@@ -1,8 +1,8 @@
 from optuna import Trial
 import pytest
-from stexus.experiment.BaseExperiment import BaseExperiment
-from stexus.experiment.ExperimentException import ExperimentException
-from stexus.adjust.AdjustInterface import AdjustInterface
+from stexus.experiment.base import BaseExperiment
+from stexus.experiment.exception import ExperimentException
+from stexus.adjust.interface import AdjustInterface
 
 class NoopExperiment(BaseExperiment):
     def experiment(self, advocator: Trial) -> float | int:

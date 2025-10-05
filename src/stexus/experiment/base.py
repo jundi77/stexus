@@ -1,9 +1,9 @@
 from abc import abstractmethod
 from optuna import Trial
-from .ExperimentInterface import ExperimentInterface
-from .ExperimentException import ExperimentException
-from ..config.Config import ConfigModel
-from ..adjust.AdjustInterface import AdjustInterface
+from .interface import ExperimentInterface
+from .exception import ExperimentException
+from ..config.loader import ConfigModel
+from ..adjust.interface import AdjustInterface
 
 class BaseExperiment(ExperimentInterface):
     _config: ConfigModel

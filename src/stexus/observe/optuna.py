@@ -4,9 +4,9 @@ import optuna_dashboard._cli
 import time
 import os
 # from optuna_dashboard._cli import auto_select_serer, run_debug_server, run_gunicorn, run_wsgiref, BaseStorage, get_storage
-from .BaseObserve import BaseObserve
-from .ObserveException import ObserveException
-from ..config.Config import ConfigModel
+from .base import BaseObserve
+from .exception import ObserveException
+from ..config.loader import ConfigModel
 
 class ObserveOptuna(BaseObserve):
     def __init__(self, config: ConfigModel|None = None) -> None:
