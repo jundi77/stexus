@@ -1,4 +1,4 @@
-import subprocess
+import subprocess, os, stat
 from optuna import Trial
 from .base import BaseExperiment
 from .exception import ExperimentException
@@ -13,6 +13,16 @@ class ExperimentWithScript(BaseExperiment):
         super().__init__(config, adjust)
 
     def _run_script(self) -> None:
+        if os.path.isfile(self._config["experiment"]["args"]) and not os.access(self._config["experiment"]["args"], os.X_OK):
+            """if args is file and it doesn't have executable flag,
+            add executable flag.
+            """
+            os.chmod(
+                self._config["experiment"]["args"],
+                os.stat(
+                    self._config["experiment"]["args"]
+                ).st_mode | stat.S_IEXEC
+            )
         subprocess.run(
             args=self._config["experiment"]["args"],
             check=not self._config["experiment"].get("ignore_exit_code", False),
