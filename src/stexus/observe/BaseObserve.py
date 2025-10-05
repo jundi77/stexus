@@ -4,8 +4,6 @@ from .ObserveException import ObserveException
 from ..config.Config import ConfigModel
 
 class BaseObserve(ObserveInterface):
-    _config: ConfigModel
-
     def __init__(self,
                  config: ConfigModel|None = None,
     ) -> None:
