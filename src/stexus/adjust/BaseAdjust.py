@@ -16,8 +16,6 @@ class JinjaPathEnvironments(TypedDict):
     environment: Environment
 
 class BaseAdjust(AdjustInterface):
-    _config: ConfigModel
-    _source_template_environments: list[JinjaPathEnvironments] = []
 
     """
     Can accept file(s) and directory for source template,
@@ -36,6 +34,7 @@ class BaseAdjust(AdjustInterface):
             raise AdjustException("config cannot be empty.")
         self._config = config
 
+        self._source_template_environments = []
         for path in self._config['source_templates']:
             if not os.path.exists(path):
                 raise AdjustException(f"{path} as source_template must exists.")

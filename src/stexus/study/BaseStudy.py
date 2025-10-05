@@ -5,9 +5,6 @@ from ..config.Config import ConfigModel
 from ..experiment.ExperimentInterface import ExperimentInterface
 
 class BaseStudy(StudyInterface):
-    _config: ConfigModel
-    _experiment: ExperimentInterface
-
     def __init__(self,
                  config: ConfigModel|None = None,
                  experiment: ExperimentInterface|None = None
